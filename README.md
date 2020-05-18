@@ -8,7 +8,7 @@ File takes 2 inputs:
 1) Fle containing time series of dihedral angles.
 2) Number of bins in raster.
 
-for "2dhistopls.py"
+for "3dhistopls.py"
 (Much more efficient 3d histogram)
 takes 1 input:
 1) Fle containing time series of dihedral angles.
