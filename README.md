@@ -1,24 +1,21 @@
-ALI RAZZAK SCRIPT MADE DURING Physical Chemistry PhD at UNIVERSITY OF BASEL
-For "combine_column_1s.py" to be run in Python2.7
+ALI RAZZAK SCRIPT MADE DURING PHYSICAL CHEMISTRY PhD @ UNIVERSITY OF BASEL
 
+For "combine_column_1s.py" to be run in Python2.7
 Takes the first row of two files [x] and [y] and combines them into a single file with two rows [x y]. Particularly usefulin preperation for the "make_ramachandran.py" script.
 
-for "makerama.py"
-File takes 2 inputs:
+File takes 3 inputs:
 1) File one containing column.
 2) File two containing column.
 3) File three combination of column 1 from both files.
 
 For "make_ramachandran.py" to be run in Python2.7
-
 Takes sequentially ordered list of dihedral angles so in column 1 x axis sequence and column 2 the dihedral angle. Produces 3D histogram of ramachandran plot and outputs onto customisable GUI.
 
-for "makerama.py"
 File takes 2 inputs:
 1) Fle containing time series of dihedral angles.
 2) Number of bins in raster.
 
-for "generic_make_3d_histogram.py"
+For "generic_make_3d_histogram.py" to be run in Python3
 (Much more efficient 3d histogram)
 takes 1 input:
 1) Fle containing time series of dihedral angles.
