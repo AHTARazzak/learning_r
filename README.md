@@ -1,5 +1,15 @@
-ALI RAZZAK SCRIPT MADE DURING Theoretical chemistry PhD at UNIVERSITY OF BASEL
-For "makerama.py" to be run in Python2.7
+ALI RAZZAK SCRIPT MADE DURING Physical Chemistry PhD at UNIVERSITY OF BASEL
+For "combine_column_1s.py" to be run in Python2.7
+
+Takes the first row of two files [x] and [y] and combines them into a single file with two rows [x y]. Particularly usefulin preperation for the "make_ramachandran.py" script.
+
+for "makerama.py"
+File takes 2 inputs:
+1) File one containing column.
+2) File two containing column.
+3) File three combination of column 1 from both files.
+
+For "make_ramachandran.py" to be run in Python2.7
 
 Takes sequentially ordered list of dihedral angles so in column 1 x axis sequence and column 2 the dihedral angle. Produces 3D histogram of ramachandran plot and outputs onto customisable GUI.
 
@@ -8,12 +18,12 @@ File takes 2 inputs:
 1) Fle containing time series of dihedral angles.
 2) Number of bins in raster.
 
-for "3dhistopls.py"
+for "generic_make_3d_histogram.py"
 (Much more efficient 3d histogram)
 takes 1 input:
 1) Fle containing time series of dihedral angles.
 
-For "compilegap2.py" to be run in Python3
+For "calculate_cavity_cutoff_SURFNET.py" to be run in Python3
 
 This cavity calculation script requries:
 1) a working local compilation of CHARMM all atom simulation engine - see line 157 to make changes in exectuable.
