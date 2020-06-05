@@ -64,3 +64,121 @@ The scripts takes 6 inputs:
 4) Number of frames (from to track from starting) (int)
 5) Cutoff for cavity assignments
 6) System number (consider removing and change where applicable in script for your circumstance)
+
+For "convert_dihed_energy.py" to be run in Python3
+
+This script reads a sequence of PDB file and calcualtes the dihedral energy hamiltonian term of each amino acid residue.
+
+The scripts takes 2 inputs:
+1) The name of the file naming pattern for each PDB structure.
+2) The name of the file to output to.
+
+For "dihedral_angle_avg_std.py" to be run in Python2.7
+
+This file reads multiple .xvg files and returns the average and dihedral angle across all .xvg files
+
+The scripts takes 2 inputs:
+1) The name of the .xvg file naming pattern for each file containing dihedral angles structure.
+2) The name of the file to output to.
+
+For "charmm_hbond_ana_hard.py" to be run in Python3
+
+This script runs charmm for hbond analysis for each residue.
+Intended for use with charmm pipeline.
+Only parsable for someone with charmm expertise.
+
+The script takes 1 input:
+1) File format to be read
+
+For "charmm_hbond_ana_specific.py" to be run in Python3
+
+This script runs charmm for hbond analysis for specific residues as selected in aaresidue (line 12).
+Intended for use with charmm pipeline.
+Only parsable for someone with charmm expertise.
+
+The script takes 1 input:
+1) File format to be read
+
+For "count_hbond_for_molecule_logfile_charmm.py" to be run in Python3
+
+This script reads a charmm log file following Hbond analysis.
+It then counts the number of Hbond for a given residue and molecule ID (line 17).
+Intended for usage in CHARMM pipeline.
+
+The script takes 1 input:
+1) Name of .log file to search for hbonds.
+
+For "file_avg_std_standarderror.py" to be run in Python2.7
+
+READS THE XVG FILE
+need to put script file in same directory as the avg
+This file returns the mean, standard deviation, and standard error for data from determined point to the next (as specific line 19 and 21)
+Output in terminal
+
+Important to read file notes (details in script)
+
+For "file_avg_std_standarderror_section.py" to be run in Python2.7
+
+READS THE XVG FILE
+need to put script file in same directory as the avg
+This file returns the mean, standard deviation, and standard error for entire file per section for series of files.
+section sizes dtermined line 25 and 27 (250 right now but can be changed)
+Output in terminal and to file (see line 62)
+
+Important to read file notes (details in script)
+
+The script takes 1 input:
+1) File format of series of files.
+
+For "pull_lines_into_file.py" to be run in Python3
+
+File pulls lines (as specified in aalist) into seperate files (see line 19).
+Intended to be used with series of files and structural bioinformatic pipeline.
+
+The script takes 1 input:
+1) File format of series of files.
+
+For "pvalue_consider_null.py" to be run in Python3
+
+This file finds the p-value of data and determines whether to reject or accept null hypothesis.
+Can modualte significance on line 24.
+
+The script takes 1 input:
+1) Name of file to process.
+
+For "ss_dump_analysis.py" to be run in Python3
+
+This file reads the secondary structure association for each residue and prints it out into a time series format (see line 20).
+Intended to be used in groamcs pipeline. Need output from gmx ss_dump http://manual.gromacs.org/archive/5.0.5/programs/gmx-do_dssp.html.
+Need -dump command output to be read.
+
+Read notes in script file!
+
+The script takes 2 input:
+1) Reads ss dump output.
+2) Saves to this file.
+
+For "dccm_analysis_prep_file.py" to be run in Python3
+
+This file gets the ABSOLUTE difference in DCCM between two files
+
+The script takes 3 input:
+1) DCCM File one contents.
+2) DCCM File two contents.
+3) File with outputted difference for each atom pair.
+
+For "swap_columns_1_2.py" to be run in Python3
+
+This file swaps columns 1 and 2 within a file.
+
+The script takes 2 input:
+1) Name of file with columns wanting to swap.
+2) ame of file outputing to.
+
+For "upper_and_lower_iqr.py" to be run in Python3
+
+This script finds the upper and lower quartiles of data.
+Does it for second column and must only contain data values.
+
+The script takes 2 input:
+1) Name of file to find quartiles for.
