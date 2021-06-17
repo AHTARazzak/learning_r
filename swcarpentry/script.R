@@ -1,6 +1,6 @@
 
-setwd("/Users/alirazzak/Desktop/Code/rstudio_learn")
-getwd()
+#setwd("/Users/alirazzak/Desktop/Code/rstudio_learn")
+#getwd()
 #reading in CSV
 dat <- read.csv(file = "inflammation-01.csv", header = FALSE)
 
@@ -219,4 +219,217 @@ display(c = 77)
 rescale <- function(this_vector, lowest = min(this_vector), highest = max(this_vector)) {
   result <- (this_vector - lowest) / (highest - this_vector)
   return(result)
+}
+
+#Analyzing multiple Data Sets
+analyze("inflammation-01.csv")
+
+best_practice <- c("Let", "the", "computer", "do", "the", "work")
+print_words <- function(sentence) {
+  print(sentence[1])
+  print(sentence[2])
+  print(sentence[3])
+  print(sentence[4])
+  print(sentence[5])
+  print(sentence[6])
+}
+print_words(best_practice)
+best_practice[-6]
+print_words(best_practice[-6])
+
+print_words <- function(sentence) {
+  for (word in sentence) {
+    print(word)
+  }
+}
+
+print_words(best_practice)
+
+len <- 0
+vowels <- c("a", "e", "i", "o", "u")
+for (v in vowels) {
+  len <- len +1
+}
+len
+
+letter <- "z"
+for (letter in c("a", "b", "c")) {
+  print(letter)
+}
+
+length(vowels)
+
+for (i in  seq(3)){
+  print(i)
+}
+
+total <- function(this_vector){
+  the_sum <- 0
+  for (i in this_vector){
+    the_sum <- the_sum + i
+  }
+  return(the_sum)
+}
+ex_vec <- c(4, 8, 15, 16, 23, 42)
+total(ex_vec)
+
+expo <- function(base, exponent){
+  this_base <- 1
+  for (i in seq(exponent)){
+    this_base <- this_base * base
+  }
+  return(this_base)
+}
+expo(2, 4)
+
+filenames <- list.files(pattern = "csv", full.names=TRUE)
+
+filenames <- filenames[1:3]
+for (f in filenames) {
+  print(f)
+  analyze(f)
+}
+
+#Making Choices
+analyze_all <- function(folder = "data", pattern) {
+  filenames <- list.files(path = folder, pattern = pattern, full.names = TRUE)
+  for (f in filenames) {
+    analyze(f)
+  }
+}
+
+pdf("inflammation-01.pdf")
+analyze("inflammation-01.csv")
+dev.off()
+
+num  <- 37
+num > 100
+num < 100
+num <- 37
+if (num > 100) {
+  print("greater")
+} else {
+  print("not greater")
+}
+print("done")
+
+num <- 53
+if (num > 100) {
+  print("num is greater than 100")
+}
+
+sign <- function(num) {
+  if (num > 0) {
+    return(1)
+  } else if (num == 0){
+    return(0)
+  } else {
+    return(-1)
+  }
+}
+
+sign(-3)
+sign(2/3)
+if (1 > 0 && -1 > 0){
+  print("both parts are true")
+} else {
+  print("at least one part is not true")
+}
+
+if (1 > 0 || -1 > 0) {
+  print("at least one part is true")
+} else {
+  print("neither part is true")
+}
+
+a <- NA
+a == 1
+
+if (is.na(a)){
+  print("Hi!")
+}
+help(boxplot)
+plot_dist <- function(x, threshold, use_boxplot = TRUE) {
+  if (length(x) > threshold && use_boxplot) {
+    boxplot(x)
+  } else if (length(x) < threshold && !use_boxplot) {
+    hist(x)
+  } else {
+    stripchart(x)
+  }
+}
+
+dat <- read.csv("inflammation-01.csv", header = FALSE)
+plot_dist(dat[, 10], threshold = 10) 
+
+filenames <- list.files(path = "data", pattern = "inflammation-[0-4]{2}.csv", full.names = TRUE)
+filename_max <- ""
+patient_max <- 0
+average_inf_max <- 0
+for (f in filenames) {
+  dat <- read.csv(file = f, header = FALSE)
+  dat.means <- apply(dat, 1, mean)
+  for (patient_index in 1:length(dat.means)){
+    patient_average_inf <- dat.means[patient_index]
+    if (patient_average_inf  > average_inf_max) {
+      average_inf_max <- patient_average_inf
+      filename_max <- f
+      patient_max <- patient_index
+    }
+  }
+}
+print(filename_max)
+print(patient_max)
+print(average_inf_max)
+
+analyze <- function(filename, output = NULL) {
+  if (!is.null(output)) {
+    pdf(output)
+  }
+  dat <- read.csv(file = filename, header = FALSE)
+  avg_day_inflammation <- apply(dat, 2, mean)
+  plot(avg_day_inflammation)
+  max_day_inflammation <- apply(dat, 2, max)
+  plot(max_day_inflammation)
+  min_day_inflammation <- apply(dat, 2, min)
+  plot(min_day_inflammation)
+  if (!is.null(output)) {
+    dev.off()
+  }
+}
+
+output <- NULL
+is.null(output)
+!is.null(output)
+analyze("inflammation-01.csv")
+dir.create("results")
+analyze("inflammation-01.csv", output = "results/inflammation-01.pdf")
+
+f <- "inflammation-01.csv"
+sub("csv", "pdf", f)
+
+analyze_all <- function(pattern) {
+  data_dir <- "data"
+  results_dir <- "results"
+  filenames <- list.files(path = data_dir, pattern = pattern)
+  for (f in filenames) {
+    pdf_name <- file.path(results_dir, sub("csv", "pdf", f))
+    analyze(file.path(data_dir, f), output = pdf_name)
+  }
+}
+
+analyze <- function(filename, output = NULL) {
+  if (!is.null(output)) {
+    pdf(output)
+  }
+  dat <- read.csv(file = filename, header = FALSE)
+  avg_day_inflammation <- apply(dat, 2, mean)
+  plot(avg_day_inflammation, type = "l")
+  max_day_inflammation <- apply(dat, 2, max)
+  plot(max_day_inflammation, type = "l")
+  min_day_inflammation <- apply(dat, 2, min)
+  plot(min_day_inflammation, type = "l")
+  if (!is.null(output)) {
+    dev.off()
+  }
 }
