@@ -42,3 +42,18 @@ ls() # Lists all the objects in your current workspace
 # 7) Keep track of sessionInfo in project folder
 # 8) Practice code review- used for preparing experiments & manuscripts.
 rm(list = ls()) # If you want to delete all the objects in the workspace and start with a clean slate
+
+# Start each program w description of what it does
+# Then load packages
+# Consider working directory when writing script
+# Use comments to mark off sections of code
+# Put functions definitions at top of file, or in seperate file if many
+# Name & style code consistently
+# Break code into small, discrete pieces
+# Factor out common operations rather tjan repeating them
+# Keep all of source files for project in one & use relative paths to access them
+# Keep track fo the memory used by your program
+# Always start w clean environment instead of saving workspace
+# Keep track of session information in your project folder
+# Someone else review your code
+# Use version control

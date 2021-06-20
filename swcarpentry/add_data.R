@@ -47,3 +47,6 @@ x
 dat$Gender
 dat[dat$Gender == "M", ]$Gender <- "m"
 dat[dat$Gender == "F", ]$Gender <- "f"
+
+#Data in data frames addressed by index by logical vector, or by name
+#Use $ operator to address column by name

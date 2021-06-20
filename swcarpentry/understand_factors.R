@@ -41,3 +41,7 @@ plot(x = dat$Gender, y = dat$BloodPressure)
 
 levels(dat$Gender)[2] <- 'f'
 plot(x = dat$Gender, y = dat$BloodPressure)
+
+#Factors used to represent categorical data
+#Factors can be ordered or unordered
+#Some R  functions have special methods for handling factors

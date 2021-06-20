@@ -53,3 +53,9 @@ head(carSpeeds)
 
 write.csv(carSpeeds, file = 'car-speeds-cleaned.csv', row.names = FALSE)
 write.csv(carSpeeds, file = 'car-speeds-cleaned.csv', row.names = FALSE, na = '-9999')
+
+#Import data from .csv file usibg read.csv() function
+# Understand some key arguments available for importing data properly, including header, stringAsFactors, as.is, strip.white
+# Write data to new.csv file using write.csv() function
+# Understand ket argumetns available for exporting data properly such as row.names, col.names, & NA
+
